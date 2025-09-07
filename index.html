@@ -25,7 +25,6 @@
       position: relative;
     }
 
-    /* Flagi w prawym górnym rogu */
     .language-switch {
       position: absolute;
       top: 20px;
@@ -89,7 +88,6 @@
   </style>
 </head>
 <body>
-  <!-- Przełącznik języka -->
   <div class="language-switch">
     <img src="images/flag-us.png" alt="English" onclick="switchLanguage('en')">
     <img src="images/flag-jp.png" alt="日本語" onclick="switchLanguage('jp')">
@@ -100,7 +98,6 @@
   </header>
 
   <main>
-    <!-- Teksty w obu językach -->
     <h2 id="coming-soon">Coming Soon!</h2>
     <a id="visit-btn" href="https://gamejolt.com/games/undermashed/994069" target="_blank" class="btn">Visit Game</a>
   </main>
@@ -121,9 +118,10 @@
       } else if(lang === 'jp') {
         title.textContent = 'もうすぐ公開！';
         btn.textContent = 'ゲームを見る';
-        btn.href = 'https://gamejolt.com/games/undermashed/994069'; // ta sama strona, ale możesz później zmienić na japońską
+        btn.href = 'https://gamejolt.com/games/undermashed/994069';
       }
     }
   </script>
 </body>
 </html>
+
