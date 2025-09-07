@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="us">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <title>Undermashed</title>
+  <style>
+    @font-face {
+      font-family: '8bitoperator';
+      src: url('fonts/8bitoperator.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: '8bitoperator', monospace;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      justify-content: space-between;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Flagi w prawym górnym rogu */
+    .language-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .language-switch img {
+      width: 40px;
+      height: auto;
+      cursor: pointer;
+      border: 2px solid #fff;
+      border-radius: 4px;
+      transition: 0.2s;
+    }
+
+    .language-switch img:hover {
+      border-color: #f0f0f0;
+    }
+
+    header {
+      margin-top: 40px;
+    }
+
+    h1 {
+      font-size: 70px;
+    }
+
+    h2 {
+      margin-top: 60px;
+      font-size: 50px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 15px 40px;
+      background-color: #666;
+      border: 3px solid #808080;  
+      color: #fff;                
+      font-size: 28px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #808080;
+      border-color: #666;
+    }
+
+    footer {
+      background-color: #2b2b2b;
+      color: #aaa;
+      padding: 25px;
+      width: 100%;
+      font-size: 25px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Przełącznik języka -->
+  <div class="language-switch">
+    <img src="images/flag-us.png" alt="English" onclick="switchLanguage('en')">
+    <img src="images/flag-jp.png" alt="日本語" onclick="switchLanguage('jp')">
+  </div>
+
+  <header>
+    <img src="images/logo.png" alt="Logo" width="600">
+  </header>
+
+  <main>
+    <!-- Teksty w obu językach -->
+    <h2 id="coming-soon">Coming Soon!</h2>
+    <a id="visit-btn" href="https://gamejolt.com/games/undermashed/994069" target="_blank" class="btn">Visit Game</a>
+  </main>
+
+  <footer>
+    CREATED BY: TEAM MASHED | WEBSITE : SYNTAX
+  </footer>
+
+  <script>
+    function switchLanguage(lang) {
+      const title = document.getElementById('coming-soon');
+      const btn = document.getElementById('visit-btn');
+
+      if(lang === 'en') {
+        title.textContent = 'Coming Soon!';
+        btn.textContent = 'Visit Game';
+        btn.href = 'https://gamejolt.com/games/undermashed/994069';
+      } else if(lang === 'jp') {
+        title.textContent = 'もうすぐ公開！';
+        btn.textContent = 'ゲームを見る';
+        btn.href = 'https://gamejolt.com/games/undermashed/994069'; // ta sama strona, ale możesz później zmienić na japońską
+      }
+    }
+  </script>
+</body>
+</html>
