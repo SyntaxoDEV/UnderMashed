@@ -46,6 +46,7 @@
       color: #fff;
       text-decoration: none;
       font-size: 22px;
+      cursor: pointer;
     }
 
     .topbar a:hover {
@@ -113,7 +114,7 @@
       <img src="images/flag-us.png" alt="English" onclick="switchLanguage('en')">
       <img src="images/flag-jp.png" alt="日本語" onclick="switchLanguage('jp')">
     </div>
-    <div class="center"><a href="#">Home</a></div>
+    <div class="center"><a onclick="toggleLanguage()" id="home-link">Home</a></div>
   </div>
 
   <header>
@@ -125,23 +126,41 @@
     <a id="visit-btn" href="https://gamejolt.com/games/undermashed/994069" target="_blank" class="btn">Visit Game</a>
   </main>
 
-  <footer>
+  <footer id="credits">
     CREATED BY: TEAM MASHED | WEBSITE : SYNTAX
   </footer>
 
   <script>
+    let currentLang = 'en';
+
     function switchLanguage(lang) {
       const title = document.getElementById('coming-soon');
       const btn = document.getElementById('visit-btn');
+      const home = document.getElementById('home-link');
+      const credits = document.getElementById('credits');
+
+      currentLang = lang;
 
       if(lang === 'en') {
+        home.textContent = 'Home';
         title.textContent = 'Coming Soon!';
         btn.textContent = 'Visit Game';
         btn.href = 'https://gamejolt.com/games/undermashed/994069';
+        credits.textContent = 'CREATED BY: TEAM MASHED | WEBSITE : SYNTAX';
       } else if(lang === 'jp') {
+        home.textContent = 'ホーム';
         title.textContent = 'もうすぐ公開！';
         btn.textContent = 'ゲームを見る';
         btn.href = 'https://gamejolt.com/games/undermashed/994069';
+        credits.textContent = '制作: TEAM MASHED | ウェブサイト: SYNTAX';
+      }
+    }
+
+    function toggleLanguage() {
+      if(currentLang === 'en') {
+        switchLanguage('jp');
+      } else {
+        switchLanguage('en');
       }
     }
   </script>
