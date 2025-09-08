@@ -52,14 +52,14 @@
       text-decoration: underline;
     }
 
-    /* Flagi po prawej */
+    /* Flagi po lewej, prostokątne */
     .language-switch {
       display: flex;
       gap: 10px;
     }
 
     .language-switch img {
-      width: 32px;
+      width: 48px;
       height: 32px;
       cursor: pointer;
     }
@@ -80,6 +80,7 @@
     .btn {
       display: inline-block;
       margin-top: 40px;
+      margin-bottom: 200px; /* większa odległość od stopki */
       padding: 15px 40px;
       background-color: #666;
       border: 3px solid #808080;  
@@ -108,11 +109,11 @@
 <body>
   <!-- Pasek górny -->
   <div class="topbar">
-    <div class="center"><a href="#">Home</a></div>
     <div class="language-switch">
       <img src="images/flag-us.png" alt="English" onclick="switchLanguage('en')">
       <img src="images/flag-jp.png" alt="日本語" onclick="switchLanguage('jp')">
     </div>
+    <div class="center"><a href="#">Home</a></div>
   </div>
 
   <header>
