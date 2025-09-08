@@ -55,17 +55,12 @@
     }
 
     .topbar a {
-      color: #fff;
       text-decoration: none;
       font-size: 22px;
       cursor: pointer;
     }
 
-    .topbar a:hover {
-      text-decoration: underline;
-    }
-
-    /* Flagi po lewej, prostokątne */
+    /* Flagi po lewej */
     .language-switch {
       display: flex;
       gap: 10px;
@@ -93,7 +88,7 @@
     .btn {
       display: inline-block;
       margin-top: 40px;
-      margin-bottom: 120px; /* większy odstęp od stopki, ale nie przesadza */
+      margin-bottom: 120px; /* większy odstęp od stopki */
       padding: 15px 40px;
       background-color: #666;
       border: 3px solid #808080;  
@@ -119,6 +114,20 @@
       text-align: center;
       margin-top: auto; 
     }
+
+    /* Ikona Soul */
+    .soul-icon {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    /* Home z żółtym kolorem */
+    #home-link {
+      color: yellow;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -128,7 +137,12 @@
       <img src="images/flag-us.png" alt="English" onclick="switchLanguage('en')">
       <img src="images/flag-jp.png" alt="日本語" onclick="switchLanguage('jp')">
     </div>
-    <div class="center"><a id="home-link" href="#">Home</a></div>
+    <div class="center">
+      <a id="home-link" href="#">
+        <img src="images/Soul.png" alt="Soul" class="soul-icon">
+        Home
+      </a>
+    </div>
   </div>
 
   <header>
@@ -157,14 +171,14 @@
 
       if(lang === 'en') {
         document.body.style.fontFamily = "'8bitoperator', monospace";
-        home.textContent = 'Home';
+        home.innerHTML = '<img src="images/Soul.png" alt="Soul" class="soul-icon"> Home';
         title.textContent = 'Coming Soon!';
         btn.textContent = 'Visit Game';
         btn.href = 'https://gamejolt.com/games/undermashed/994069';
         credits.textContent = 'CREATED BY: TEAM MASHED | WEBSITE : SYNTAX';
       } else if(lang === 'jp') {
         document.body.style.fontFamily = "'JF-Dot-Shinonome', monospace";
-        home.textContent = 'ホーム';
+        home.innerHTML = '<img src="images/Soul.png" alt="Soul" class="soul-icon"> ホーム';
         title.textContent = 'もうすぐ公開！';
         btn.textContent = 'ゲームを見る';
         btn.href = 'https://gamejolt.com/games/undermashed/994069';
@@ -174,6 +188,3 @@
   </script>
 </body>
 </html>
-
-
-
