@@ -20,17 +20,17 @@
       font-style: normal;
     }
 
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
+      overflow-x: hidden; /* blokada przewijania w bok */
       background-color: #000;
       color: #fff;
       font-family: '8bitoperator', monospace;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      justify-content: space-between;
       text-align: center;
-      position: relative;
     }
 
     /* Pasek na górze */
@@ -41,6 +41,8 @@
       justify-content: space-between;
       align-items: center;
       position: relative;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     /* Home na środku */
@@ -90,7 +92,7 @@
     .btn {
       display: inline-block;
       margin-top: 40px;
-      margin-bottom: 200px; /* większa odległość od stopki */
+      margin-bottom: 120px; /* większy odstęp od stopki, ale nie przesadza */
       padding: 15px 40px;
       background-color: #666;
       border: 3px solid #808080;  
@@ -109,9 +111,9 @@
     footer {
       background-color: #2b2b2b;
       color: #aaa;
-      display: flex;
-      padding: 15px 20px;
+      padding: 25px;
       width: 100%;
+      box-sizing: border-box; /* zapobiega powiększaniu */
       font-size: 25px;
       text-align: center;
     }
@@ -170,4 +172,3 @@
   </script>
 </body>
 </html>
-
