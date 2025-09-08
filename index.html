@@ -123,7 +123,7 @@
       <img src="images/flag-us.png" alt="English" onclick="switchLanguage('en')">
       <img src="images/flag-jp.png" alt="日本語" onclick="switchLanguage('jp')">
     </div>
-    <div class="center"><a onclick="toggleLanguage()" id="home-link">Home</a></div>
+    <div class="center"><a id="home-link" href="#">Home</a></div>
   </div>
 
   <header>
@@ -164,14 +164,6 @@
         btn.textContent = 'ゲームを見る';
         btn.href = 'https://gamejolt.com/games/undermashed/994069';
         credits.textContent = '制作: TEAM MASHED | ウェブサイト: SYNTAX';
-      }
-    }
-
-    function toggleLanguage() {
-      if(currentLang === 'en') {
-        switchLanguage('jp');
-      } else {
-        switchLanguage('en');
       }
     }
   </script>
