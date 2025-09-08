@@ -24,7 +24,7 @@
     html, body {
       margin: 0;
       padding: 0;
-      overflow-x: hidden; /* blokada przewijania w bok */
+      overflow-x: hidden;
       background-color: #000;
       color: #fff;
       font-family: '8bitoperator', monospace;
@@ -58,6 +58,27 @@
       text-decoration: none;
       font-size: 22px;
       cursor: pointer;
+      color: #fff; /* domyślnie biały */
+      display: inline-flex;
+      align-items: center;
+    }
+
+    /* Ikona Soul ukryta domyślnie */
+    .soul-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      display: none;
+    }
+
+    /* Hover efekt */
+    #home-link:hover {
+      color: yellow;
+      font-weight: bold;
+    }
+
+    #home-link:hover .soul-icon {
+      display: inline-block;
     }
 
     /* Flagi po lewej */
@@ -76,10 +97,6 @@
       margin-top: 40px;
     }
 
-    h1 {
-      font-size: 70px;
-    }
-
     h2 {
       margin-top: 60px;
       font-size: 50px;
@@ -88,7 +105,7 @@
     .btn {
       display: inline-block;
       margin-top: 40px;
-      margin-bottom: 120px; /* większy odstęp od stopki */
+      margin-bottom: 120px;
       padding: 15px 40px;
       background-color: #666;
       border: 3px solid #808080;  
@@ -114,20 +131,6 @@
       text-align: center;
       margin-top: auto; 
     }
-
-    /* Ikona Soul */
-    .soul-icon {
-      width: 20px;
-      height: 20px;
-      vertical-align: middle;
-      margin-right: 8px;
-    }
-
-    /* Home z żółtym kolorem */
-    #home-link {
-      color: yellow;
-      font-weight: bold;
-    }
   </style>
 </head>
 <body>
@@ -140,7 +143,7 @@
     <div class="center">
       <a id="home-link" href="#">
         <img src="images/Soul.png" alt="Soul" class="soul-icon">
-        Home
+        <span id="home-text">Home</span>
       </a>
     </div>
   </div>
@@ -164,21 +167,21 @@
     function switchLanguage(lang) {
       const title = document.getElementById('coming-soon');
       const btn = document.getElementById('visit-btn');
-      const home = document.getElementById('home-link');
+      const homeText = document.getElementById('home-text');
       const credits = document.getElementById('credits');
 
       currentLang = lang;
 
       if(lang === 'en') {
         document.body.style.fontFamily = "'8bitoperator', monospace";
-        home.innerHTML = '<img src="images/Soul.png" alt="Soul" class="soul-icon"> Home';
+        homeText.textContent = 'Home';
         title.textContent = 'Coming Soon!';
         btn.textContent = 'Visit Game';
         btn.href = 'https://gamejolt.com/games/undermashed/994069';
         credits.textContent = 'CREATED BY: TEAM MASHED | WEBSITE : SYNTAX';
       } else if(lang === 'jp') {
         document.body.style.fontFamily = "'JF-Dot-Shinonome', monospace";
-        home.innerHTML = '<img src="images/Soul.png" alt="Soul" class="soul-icon"> ホーム';
+        homeText.textContent = 'ホーム';
         title.textContent = 'もうすぐ公開！';
         btn.textContent = 'ゲームを見る';
         btn.href = 'https://gamejolt.com/games/undermashed/994069';
